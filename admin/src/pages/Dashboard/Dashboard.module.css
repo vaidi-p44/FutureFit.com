@@ -1,0 +1,93 @@
+.dashboard {
+  padding: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.periodSelect {
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  background-color: #fff;
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.statCard {
+  background-color: #ffffff;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.statCard h3 {
+  color: #666;
+  margin: 0 0 1rem 0;
+  font-size: 1rem;
+}
+
+.statInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.count {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.increase {
+  color: #2eca6a;
+  font-weight: 500;
+}
+
+.charts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  gap: 1.5rem;
+}
+
+.chartCard {
+  background-color: #ffffff;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.chartCard h3 {
+  color: #666;
+  margin: 0 0 1.5rem 0;
+}
+
+/* Dark mode styles */
+:global(.dark-mode) .statCard,
+:global(.dark-mode) .chartCard {
+  background-color: #2d2d2d;
+}
+
+:global(.dark-mode) .statCard h3,
+:global(.dark-mode) .chartCard h3 {
+  color: #ffffff;
+}
+
+:global(.dark-mode) .count {
+  color: #ffffff;
+}
+
+:global(.dark-mode) .periodSelect {
+  background-color: #2d2d2d;
+  color: #ffffff;
+  border-color: #444;
+}

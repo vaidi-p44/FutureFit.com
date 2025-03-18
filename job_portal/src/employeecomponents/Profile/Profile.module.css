@@ -1,0 +1,209 @@
+.profilePage {
+  padding: 2rem;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profileSection {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  max-width: 900px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.profileHeader {
+  padding: 2rem;
+  background: #4a90e2;
+  color: white;
+  text-align: center;
+}
+
+.profileInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profileAvatar img {
+  width: 100px; /* Adjust size as needed */
+  height: 100px; /* Ensure it’s a perfect square */
+  border-radius: 50%; /* Makes it round */
+  object-fit: cover; /* Ensures the image fills the space properly */
+  border: 2px solid #ddd; /* Optional: Adds a subtle border */
+}
+
+.profileDetails h2 {
+  margin-top: 1rem;
+  font-size: 1.8rem;
+}
+
+.profileMeta,
+.profileContact {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.profileMeta span,
+.profileContact span {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+  color: white;
+}
+
+.profileBody {
+  padding: 2rem;
+}
+
+.aboutSection h3,
+.postedJobs h3 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #4a90e2;
+  display: inline-block;
+  padding-bottom: 0.3rem;
+}
+
+.aboutSection p {
+  color: #555;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.jobsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.5rem;
+}
+
+.jobCard {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition:
+    transform 0.3s ease-in-out,
+    box-shadow 0.3s ease-in-out;
+}
+
+.jobCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.jobHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.jobHeader h4 {
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.editButton {
+  background: none;
+  border: none;
+  color: #4a90e2;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.editButton:hover {
+  color: #357abd;
+}
+
+.profileDetails .editButton {
+  background: none;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+.jobDetails {
+  margin-bottom: 1rem;
+}
+
+.jobDetail {
+  color: #555;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.jobDescription {
+  color: #666;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.jobFooter {
+  text-align: right;
+  color: #888;
+  font-size: 0.9rem;
+  padding-top: 1rem;
+  border-top: 1px solid #eee;
+}
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modalContent {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 400px;
+}
+
+.modalButtons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.modalButtons button {
+  margin-top: 10px;
+  padding: 8px 12px;
+}
+
+@media (max-width: 768px) {
+  .profileSection {
+    max-width: 95%;
+  }
+
+  .profileInfo {
+    text-align: center;
+  }
+
+  .profileMeta,
+  .profileContact {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .jobsGrid {
+    grid-template-columns: 1fr;
+  }
+}

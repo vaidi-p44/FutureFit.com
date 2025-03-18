@@ -1,0 +1,116 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+.formTitle {
+  text-align: center;
+  font-size: 1.37rem;
+  font-weight: 600;
+  margin-bottom: 1.87rem;
+}
+
+form {
+  background: #ffffff;
+  width: 100%;
+  max-width: 750px;
+  border-radius: 12px;
+  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.1);
+  padding: 40px 30px;
+  margin: auto;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.input {
+  height: 54px;
+  width: 100%;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+input {
+  width: 100%;
+  padding: 12px 15px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  transition: 0.3s;
+  margin-top: 5px;
+}
+
+.fileInput {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1em;
+  transition: 0.3s;
+}
+
+.fileInput:focus {
+  border-color: #275df5;
+  outline: none;
+}
+
+.fileInput.invalid {
+  border-color: #dc3545;
+}
+
+.errorFeedback {
+  margin-top: 5px;
+  font-size: 0.9em;
+  color: #dc3545;
+}
+
+.fileName {
+  font-size: 0.9em;
+  color: #28a745;
+}
+
+.submitButton {
+  padding: 10px 15px;
+  background: #275df5;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.submitButton:hover {
+  background: #0e4cf8;
+}
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+  gap: 1rem;
+}
+
+.cancel {
+  padding: 10px 20px;
+  font-size: 14px;
+  color: #555;
+  justify-content: flex-start;
+  background-color: #f5f5f5;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.save {
+  padding: 10px 20px;
+  font-size: 14px;
+  color: #fff;
+  background-color: #275df5;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.save:hover {
+  background: #0e4cf8;
+}

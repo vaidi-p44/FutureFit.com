@@ -1,0 +1,236 @@
+/* General styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.registerContainer {
+  max-width: 410px;
+  margin: 0 auto;
+  border-radius: 0.5rem;
+  padding: 2rem 1.5rem;
+  /* background: #fff;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); */
+}
+
+.formTitle {
+  text-align: center;
+  font-size: 1.37rem;
+  font-weight: 600;
+  margin-bottom: 1.87rem;
+}
+
+.registerForm {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+/* Input field styles */
+.input {
+  height: 54px;
+  width: 100%;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.inputField {
+  height: 100%;
+  width: 100%;
+  border-radius: 0.31rem;
+  outline: none;
+  font-size: 1.06rem;
+  border: 1px solid #f4e6e9;
+  padding: 0 1.25rem 0 3.12rem; /* Added padding to right side */
+  transition: 0.2s ease;
+}
+
+.inputField::placeholder {
+  color: #d7d3bf;
+}
+
+.inputField:focus {
+  border-color: #275df5;
+}
+
+/* Verification Button inside the email input field */
+.vbutton {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  margin-top: 0.3rem;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  font-weight: 500;
+  font-size: 1rem;
+  color: #275df5;
+  cursor: pointer;
+  margin-right: -0.5rem;
+  border-radius: 0.31rem;
+  transition: 0.2s ease;
+}
+
+.vbutton:hover {
+  color: #0e4cf8;
+}
+
+.vbutton:disabled {
+  border-color: #ccc;
+  cursor: not-allowed;
+  color: #666;
+}
+
+.verificationStatus {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.2rem;
+}
+
+.verified {
+  color: green;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.notVerified {
+  color: red;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+/* Button styles */
+.registerButton {
+  width: 100%;
+  height: 54px;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  color: white;
+  font-weight: 500;
+  font-size: 1.125rem;
+  margin-top: 2.19rem;
+  background: #275df5;
+  border-radius: 0.31rem;
+  transition: 0.2s ease;
+}
+
+.registerButton:hover {
+  background: #0e4cf8;
+}
+
+.icon {
+  font-size: 1.3rem;
+  color: #d7d3bf;
+  position: absolute;
+  top: 50%;
+  left: 0.9rem;
+  margin-top: 0.3rem;
+  pointer-events: none;
+  transform: translateY(-50%);
+  transition: 0.2s ease;
+}
+
+.input .inputField:focus ~ .icon {
+  color: #275df5;
+}
+
+.eye {
+  size: 1rem;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #275df5;
+}
+
+.input_type {
+  display: flex;
+  align-items: start;
+  justify-content: space-evenly;
+  gap: 1rem; /* Space between Male and Female options */
+}
+
+.radios {
+  display: flex;
+  align-items: start;
+  justify-content: space-evenly;
+  gap: 1rem;
+}
+
+.input_type input[type="radio"] {
+  transform: scale(1.4); /* Increase size of the radio button */
+  cursor: pointer;
+  margin-left: 0.4rem;
+}
+
+label {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #555555;
+}
+
+.otpOverlay {
+  position: fixed; /* Ensures it overlays the whole screen */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent dark background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Ensures it's above other elements */
+}
+
+.otpContainer {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+  position: relative;
+}
+
+.otpCloseBtn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 20px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: #333;
+}
+
+.otpCloseBtn:hover {
+  color: red;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+  .registerContainer {
+    padding: 1.5rem 1rem;
+  }
+
+  .formTitle {
+    font-size: 1.5rem;
+  }
+
+  .registerButton {
+    font-size: 1rem;
+  }
+}
+
+.error {
+  color: red;
+  font-size: 0.9rem;
+  margin-top: 5px;
+}

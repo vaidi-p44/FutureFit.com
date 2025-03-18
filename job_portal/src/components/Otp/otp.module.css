@@ -1,0 +1,141 @@
+/* Modal Overlay */
+.otpOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Dim background */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+/* OTP Popup */
+.otpPopup {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  width: 350px;
+  max-width: 90%;
+  text-align: center;
+  position: relative;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.resendNote {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #555;
+  text-align: center;
+}
+
+.resendBtn {
+  background: none;
+  border: none;
+  color: #007bff;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: wavy;
+  transition: color 0.3s ease-in-out;
+}
+
+.resendBtn:hover {
+  color: #0056b3;
+}
+
+/* Popup Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Close Button */
+.exitBtn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  cursor: pointer;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.exitBtn:hover {
+  color: red;
+}
+
+/* OTP Input Container */
+.inputContainer {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 15px;
+  margin-bottom: 20px;
+}
+
+/* OTP Input */
+.otpInput {
+  width: 38px;
+  height: 43px;
+  font-size: 1.5rem;
+  text-align: center;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  outline: none;
+  background: #f9f9f9;
+  transition:
+    border-color 0.3s ease,
+    background 0.3s ease;
+}
+
+.otpInput:focus {
+  border-color: #275df5;
+  background: #e6e7ff;
+}
+
+/* Verify Button */
+.verifyButton {
+  width: 100%;
+  padding: 12px;
+
+  background: #275df5;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+}
+
+.verifyButton:hover {
+  background: #0e4cf8;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .otpPopup {
+    padding: 1.5rem;
+  }
+
+  .otpInput {
+    width: 40px;
+    height: 45px;
+  }
+
+  .verifyButton {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+}

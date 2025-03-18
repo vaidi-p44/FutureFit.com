@@ -1,0 +1,67 @@
+.container {
+  width: 90%;
+  margin: 20px auto;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.heading {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.loading {
+  text-align: center;
+  font-size: 18px;
+  color: #888;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #f9f9f9;
+}
+
+.table th,
+.table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+}
+
+.table th {
+  background: #007bff;
+  color: white;
+}
+
+.table tr:nth-child(even) {
+  background: #f2f2f2;
+}
+
+.table tr:hover {
+  background: #ddd;
+}
+
+.noData {
+  text-align: center;
+  padding: 20px;
+  font-size: 18px;
+  color: #ff0000;
+}
+.cancelButton {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.cancelButton:hover {
+  background-color: darkred;
+}

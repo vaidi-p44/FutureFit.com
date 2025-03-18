@@ -1,0 +1,211 @@
+.appliedJobs {
+  padding: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.filters {
+  display: flex;
+  gap: 1rem;
+}
+
+.statusFilter {
+  padding: 0.5rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  background-color: white;
+}
+
+.searchBar {
+  margin-bottom: 2rem;
+}
+
+.searchBar input {
+  width: 100%;
+  max-width: 400px;
+  padding: 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.tableContainer {
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.table th,
+.table td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+.table th {
+  background-color: #f8f9fa;
+  font-weight: 600;
+}
+
+.statusSelect {
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border: 1px solid #ddd;
+}
+
+.pending {
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+.on-hold {
+  background-color: #cce5ff;
+  color: #004085;
+}
+
+.shortlisted {
+  background-color: #e6f4ea;
+  color: #1e7e34;
+}
+
+.rejected {
+  background-color: #feeced;
+  color: #dc3545;
+}
+
+.hired {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.viewButton,
+.editButton {
+  padding: 0.5rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.viewButton {
+  background-color: #4154f1;
+  color: white;
+}
+
+.editButton {
+  background-color: #ffd43b;
+  color: #000;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modalContent {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 500px;
+}
+
+.applicationDetails {
+  margin-top: 1.5rem;
+}
+
+.detailGroup {
+  margin-bottom: 1rem;
+}
+
+.detailGroup label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+  color: #666;
+}
+
+.detailGroup p {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.modalActions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 2rem;
+}
+
+.closeButton {
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  background-color: #e9ecef;
+  color: #000;
+}
+
+/* Dark mode styles */
+:global(.dark-mode) .table {
+  background-color: #2d2d2d;
+  color: #ffffff;
+}
+
+:global(.dark-mode) .table th {
+  background-color: #1a1a1a;
+}
+
+:global(.dark-mode) .table td {
+  border-bottom-color: #444;
+}
+
+:global(.dark-mode) .modalContent {
+  background-color: #2d2d2d;
+  color: #ffffff;
+}
+
+:global(.dark-mode) .detailGroup label {
+  color: #ccc;
+}
+
+:global(.dark-mode) .statusFilter,
+:global(.dark-mode) .statusSelect {
+  background-color: #1a1a1a;
+  border-color: #444;
+  color: #ffffff;
+}
+
+:global(.dark-mode) .searchBar input {
+  background-color: #1a1a1a;
+  border-color: #444;
+  color: #ffffff;
+}

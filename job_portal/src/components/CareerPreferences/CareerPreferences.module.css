@@ -1,0 +1,195 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+.formTitle {
+  text-align: center;
+  font-size: 1.37rem;
+  font-weight: 600;
+  margin-bottom: 1.87rem;
+}
+form {
+  background: #ffffff;
+  width: 100%;
+  max-width: 750px;
+  border-radius: 12px;
+  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.1);
+  padding: 40px 30px;
+  margin: auto;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+p {
+  font-size: 1rem;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #555;
+}
+
+.field {
+  width: 100%;
+  max-width: 600px;
+  margin-bottom: 20px;
+}
+
+label {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  display: block;
+  color: #333;
+}
+
+.options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.optionButton {
+  padding: 10px 20px;
+  font-size: 0.9rem;
+  color: #555;
+  background-color: #f5f5f5;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+  transition:
+    background-color 0.3s,
+    color 0.3s;
+}
+
+.optionButton:hover {
+  background-color: #e0e0e0;
+}
+
+.optionButton.active {
+  background-color: #275df5;
+  color: #fff;
+  border-color: #275df5;
+}
+
+.locations {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.location {
+  background-color: #275df5;
+  color: white;
+  border-radius: 20px;
+  padding: 5px 15px;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.location button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.addLocation {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  gap: 10px;
+}
+
+.addLocation input {
+  flex: 1;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  transition: border-color 0.3s;
+}
+
+.addLocation input:focus {
+  border-color: #275df5;
+  outline: none;
+}
+
+.addLocation button {
+  padding: 10px 15px;
+  background-color: #275df5;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.addLocation button:hover {
+  background-color: #0e4cf8;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.saveButton,
+.laterButton {
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition:
+    background-color 0.3s,
+    color 0.3s;
+}
+
+.saveButton {
+  background-color: #275df5;
+  color: #fff;
+  border: none;
+}
+
+.saveButton:hover {
+  background-color: #0e4cf8;
+}
+
+.laterButton {
+  background-color: #f5f5f5;
+  color: #555;
+  border: 1px solid #ddd;
+}
+
+.laterButton:hover {
+  background-color: #e0e0e0;
+}
+.cancel {
+  padding: 10px 20px;
+  font-size: 14px;
+  color: #555;
+  justify-content: flex-start;
+  background-color: #f5f5f5;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+}

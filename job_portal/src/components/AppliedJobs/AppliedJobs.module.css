@@ -1,0 +1,125 @@
+/* Container Styling */
+.appliedJobsContainer {
+  max-width: 1200px;
+  margin: 50px auto;
+  padding: 30px;
+  background: linear-gradient(135deg, #f8f9fa, #e3e6eb);
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Heading */
+.heading {
+  text-align: center;
+  font-size: 32px;
+  font-weight: bold;
+  color: #222;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Job Grid */
+.jobsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 25px;
+}
+
+/* Job Card */
+.jobCard {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.jobCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Job Title */
+.jobTitle {
+  font-size: 22px;
+  font-weight: bold;
+  color: #0073e6;
+  margin-bottom: 8px;
+}
+
+/* Company, Location, and Date */
+.company,
+.location,
+.date {
+  font-size: 16px;
+  color: #555;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 6px 0;
+}
+
+/* Status */
+.status {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 12px 0;
+}
+
+/* Unique Badge Styles */
+.statusBadge {
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: bold;
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Different Status Colors */
+.status-applied {
+  background: #ffe082;
+  color: #5d4037;
+}
+
+.status-under-review {
+  background: #ff9800;
+  color: #fff;
+}
+
+.status-interview-scheduled {
+  background: #4caf50;
+  color: #fff;
+}
+
+.status-rejected {
+  background: #f44336;
+  color: #fff;
+}
+
+.status-hired {
+  background: #2196f3;
+  color: #fff;
+}
+
+/* No Jobs Found Message */
+.noJobs {
+  text-align: center;
+  font-size: 18px;
+  color: #777;
+  margin-top: 25px;
+  font-weight: 500;
+  background: rgba(255, 0, 0, 0.1);
+  padding: 15px;
+  border-radius: 8px;
+}

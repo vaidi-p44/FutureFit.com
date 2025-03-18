@@ -1,0 +1,246 @@
+/* Job Seekers Page */
+.jobSeekers {
+  max-width: 100%;
+  padding: 20px;
+  background-color: #f8f9fa;
+  font-family: Arial, sans-serif;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.header h1 {
+  font-size: 24px;
+  color: #333;
+}
+
+.addButton {
+  display: flex;
+  align-items: center;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.searchBar {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.searchBar input {
+  width: 50%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.tableContainer {
+  overflow-x: auto;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th,
+.table td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.table th {
+  background-color: #007bff;
+  color: white;
+}
+
+.profilePhoto {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+
+/* Actions Buttons */
+.editButton,
+.deleteButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  margin: 0 5px;
+}
+
+.editButton {
+  color: #28a745;
+}
+
+.editButton:hover {
+  color: #1e7e34;
+}
+
+.deleteButton {
+  color: #dc3545;
+}
+
+.deleteButton:hover {
+  color: #c82333;
+}
+
+/* --- MODAL STYLES --- */
+/* Modal Overlay */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+/* Modal Container */
+.modal {
+  background: #fff;
+  width: 50%;
+  max-width: 600px;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Modal Header */
+.modalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+}
+
+.modalHeader h2 {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.closeButton {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #333;
+  transition: color 0.2s;
+}
+
+.closeButton:hover {
+  color: red;
+}
+
+/* Modal Content */
+.modalContent {
+  max-height: 400px; /* Prevents overflowing */
+  overflow-y: auto;
+  padding-right: 10px;
+}
+
+/* Input Group */
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.inputGroup label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.inputGroup input {
+  padding: 8px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+}
+
+/* Modal Actions */
+.modalActions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.saveButton,
+.cancelButton {
+  padding: 8px 15px;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background 0.2s;
+}
+
+.saveButton {
+  background: #28a745;
+  color: white;
+}
+
+.saveButton:hover {
+  background: #218838;
+}
+
+.cancelButton {
+  background: #dc3545;
+  color: white;
+}
+
+.cancelButton:hover {
+  background: #c82333;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .modal {
+    width: 90%;
+  }
+
+  .table th,
+  .table td {
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+
+  .inputGroup input {
+    font-size: 0.9rem;
+    padding: 7px;
+  }
+
+  .modalHeader h2 {
+    font-size: 1.2rem;
+  }
+
+  .saveButton,
+  .cancelButton {
+    font-size: 0.9rem;
+    padding: 6px 10px;
+  }
+}

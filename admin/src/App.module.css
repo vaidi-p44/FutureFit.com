@@ -1,0 +1,23 @@
+.app {
+  display: flex;
+  min-height: 100vh;
+  background-color: #f5f6fa;
+  transition: background-color 0.3s ease;
+}
+
+.darkMode {
+  background-color: #1a1a1a;
+  color: #ffffff;
+}
+
+.mainContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+.pageContent {
+  padding: 20px;
+  flex: 1;
+}

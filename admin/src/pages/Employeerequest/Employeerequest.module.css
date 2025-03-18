@@ -1,0 +1,125 @@
+.container {
+  width: 90%;
+  margin: 20px auto;
+  font-family: Arial, sans-serif;
+}
+.searchContainer {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.searchInput {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 250px;
+}
+
+.clearButton {
+  padding: 8px 12px;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.clearButton:hover {
+  background-color: #d32f2f;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.error {
+  color: red;
+  text-align: center;
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.table th,
+.table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+}
+
+.table th {
+  background: #007bff;
+  color: #fff;
+  font-size: 16px;
+}
+
+.table tbody tr:nth-child(even) {
+  background: #f9f9f9;
+}
+
+.table tbody tr:hover {
+  background: #f1f1f1;
+}
+
+.table td {
+  font-size: 14px;
+}
+
+.table td:last-child {
+  font-weight: bold;
+}
+
+.table td:last-child {
+  color: green;
+}
+
+.table td:last-child:contains("Not Paid") {
+  color: red;
+}
+.expired {
+  color: red;
+  font-weight: bold;
+}
+
+.active {
+  color: green;
+  font-weight: bold;
+}
+
+.notPaid {
+  color: orange;
+  font-weight: bold;
+}
+.cancelButton {
+  padding: 6px 10px;
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.acceptButton {
+  padding: 6px 10px;
+  background-color: #23aa39;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.acceptButton:hover {
+  background-color: green;
+}
+.cancelButton:hover {
+  background-color: #cc0000;
+}

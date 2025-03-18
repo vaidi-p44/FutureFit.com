@@ -1,0 +1,153 @@
+.profileOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  z-index: 1000;
+}
+
+.sidebar {
+  width: 300px;
+  background: white;
+  padding: 20px;
+  overflow-y: auto;
+  border-right: 1px solid #e5e7eb;
+}
+
+.candidateList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.candidateItem {
+  padding: 12px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.candidateItem:hover {
+  background: #f3f4f6;
+}
+
+.candidateItem h4 {
+  margin: 0;
+  font-size: 16px;
+  color: #111827;
+}
+
+.candidateItem p {
+  margin: 4px 0 0;
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.profileContent {
+  flex: 1;
+  background: white;
+  padding: 30px;
+  position: relative;
+  overflow-y: auto;
+}
+
+.closeButton {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 50%;
+}
+
+.closeButton:hover {
+  background: #f3f4f6;
+}
+
+.profileHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 30px;
+}
+
+.profileInfo h2 {
+  margin: 0;
+  font-size: 24px;
+  color: #111827;
+}
+
+.profileInfo p {
+  margin: 8px 0 0;
+  color: #6b7280;
+}
+
+.downloadButton {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.downloadButton:hover {
+  background: #1d4ed8;
+}
+
+.tabs {
+  display: flex;
+  gap: 20px;
+  border-bottom: 1px solid #e5e7eb;
+  margin-bottom: 24px;
+}
+
+.tab {
+  padding: 12px 0;
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  color: #6b7280;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.tab.active {
+  color: #2563eb;
+  border-bottom-color: #2563eb;
+}
+
+.tabContent {
+  padding: 20px 0;
+}
+
+.tabContent h3 {
+  margin: 0 0 16px;
+  color: #111827;
+}
+
+.skillsTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.skillTag {
+  padding: 6px 12px;
+  background: #f3f4f6;
+  border-radius: 16px;
+  font-size: 14px;
+  color: #4b5563;
+}

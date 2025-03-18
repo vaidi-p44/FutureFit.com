@@ -1,0 +1,140 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+.formTitle {
+  text-align: center;
+  font-size: 1.37rem;
+  font-weight: 600;
+  margin-bottom: 1.87rem;
+}
+.input {
+  height: auto; /* Remove fixed height to accommodate button */
+  width: 100%;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Add space between input and button */
+  position: relative;
+}
+.inputField {
+  height: 54px;
+  width: 100%;
+  border-radius: 0.31rem;
+  outline: none;
+  font-size: 1.06rem;
+  border: 1px solid #f4e6e9;
+  padding: 0 1.25rem 0 3.12rem;
+  transition: 0.2s ease;
+}
+.inputField::placeholder {
+  color: #d7d3bf;
+}
+
+.inputField:focus {
+  border-color: #275df5;
+}
+.input .input:focus ~ .icon {
+  color: #275df5;
+}
+
+.errMessage {
+  color: red;
+  margin-top: 1px;
+  font-size: 0.9rem;
+}
+
+.actions {
+  margin-top: 0; /* Remove unnecessary margin */
+  width: auto; /* Adjust width to fit button */
+}
+.add {
+  padding: 10px 15px;
+  font-size: 14px;
+  color: #fff;
+  background-color: #275df5;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  white-space: nowrap; /* Ensure button text doesn't wrap */
+}
+.add:hover {
+  background: #0e4cf8;
+}
+.button:hover {
+  background-color: #0056b3;
+}
+
+.skillcard {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 2rem;
+  gap: 10px;
+}
+
+.skilldiv {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  padding: 10px 15px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.skillText {
+  margin: 0;
+  margin-right: 10px;
+}
+
+.deleteImg {
+  cursor: pointer;
+  color: red;
+  font-size: 1.2rem;
+}
+.icon {
+  font-size: 1.3rem;
+  color: #d7d3bf;
+  position: absolute;
+  top: 50%;
+  left: 0.9rem;
+  margin-top: 0.3rem;
+  pointer-events: none;
+  transform: translateY(-50%);
+  transition: 0.2s ease;
+}
+.input .inputField:focus ~ .icon {
+  color: #275df5;
+}
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+  gap: 1rem;
+}
+.cancel {
+  padding: 10px 20px;
+  font-size: 14px;
+  color: #555;
+  justify-content: flex-start;
+  background-color: #f5f5f5;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.save {
+  padding: 10px 20px;
+  font-size: 14px;
+  color: #fff;
+  background-color: #275df5;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.save:hover {
+  background: #0e4cf8;
+}

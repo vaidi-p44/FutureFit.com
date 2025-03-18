@@ -1,0 +1,385 @@
+.postedJobs {
+  padding: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.addButton {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background-color: #4154f1;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.searchBar {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.searchBar input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  width: 200px;
+}
+
+.clearButton {
+  padding: 8px 12px;
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.clearButton:hover {
+  background-color: #cc0000;
+}
+
+.tableContainer {
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.table th,
+.table td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+.table th {
+  background-color: #f8f9fa;
+  font-weight: 600;
+}
+
+.status {
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.active {
+  background-color: #e6f4ea;
+  color: #1e7e34;
+}
+
+.closed {
+  background-color: #feeced;
+  color: #dc3545;
+}
+
+.draft {
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+.actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.editButton,
+.deleteButton {
+  padding: 0.5rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.editButton {
+  background-color: #ffd43b;
+  color: #000;
+}
+
+.deleteButton {
+  background-color: #ff6b6b;
+  color: white;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modalContent {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 500px;
+}
+
+.formGroup {
+  margin-bottom: 1rem;
+}
+
+.formGroup label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.formGroup input,
+.formGroup select {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.modalActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.submitButton,
+.cancelButton {
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.submitButton {
+  background-color: #4154f1;
+  color: white;
+}
+
+.cancelButton {
+  background-color: #e9ecef;
+  color: #000;
+}
+
+.detailsButton {
+  padding: 0.5rem 1rem;
+  background-color: #17a2b8;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.detailsButton:hover {
+  background-color: #138496;
+}
+
+.closeButton {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: #6c757d;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.closeButton:hover {
+  background-color: #5a6268;
+}
+
+.formGroup textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+  height: 100px;
+  resize: none;
+}
+
+.submitButton {
+  background-color: #28a745;
+  color: white;
+}
+
+.submitButton:hover {
+  background-color: #218838;
+}
+
+.cancelButton {
+  background-color: #dc3545;
+  color: white;
+}
+
+.cancelButton:hover {
+  background-color: #c82333;
+}
+/* Modal background */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Modal container */
+.modalContent {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 400px; /* Reducing max width for better fit */
+  max-height: 80vh; /* Prevents overflow */
+  overflow-y: auto; /* Scroll if content is too long */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Form styling */
+.modalContent form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+/* Input fields */
+.modalContent input,
+.modalContent textarea {
+  width: 100%;
+  padding: 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+/* Textarea customization */
+.modalContent textarea {
+  height: 80px;
+  resize: vertical;
+}
+
+/* Button container */
+.modalContent button {
+  padding: 0.6rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  margin-top: 0.5rem;
+}
+
+/* Update button */
+.modalContent button[type="submit"] {
+  background: #28a745;
+  color: white;
+  font-weight: bold;
+}
+
+.modalContent button[type="submit"]:hover {
+  background: #218838;
+}
+
+/* Cancel button */
+.modalContent button:last-child {
+  background: #dc3545;
+  color: white;
+  font-weight: bold;
+}
+
+.modalContent button:last-child:hover {
+  background: #c82333;
+}
+
+/* Close button */
+.closeButton {
+  background: #888;
+  color: white;
+  font-size: 0.8rem;
+  padding: 0.5rem;
+  border-radius: 4px;
+  margin-top: 1rem;
+  cursor: pointer;
+  text-align: center;
+}
+
+.closeButton:hover {
+  background: #666;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Dark mode styles */
+:global(.dark-mode) .table {
+  background-color: #2d2d2d;
+  color: #ffffff;
+}
+
+:global(.dark-mode) .table th {
+  background-color: #1a1a1a;
+}
+
+:global(.dark-mode) .table td {
+  border-bottom-color: #444;
+}
+
+:global(.dark-mode) .modalContent {
+  background-color: #2d2d2d;
+  color: #ffffff;
+}
+
+:global(.dark-mode) .formGroup input,
+:global(.dark-mode) .formGroup select {
+  background-color: #1a1a1a;
+  border-color: #444;
+  color: #ffffff;
+}
+
+:global(.dark-mode) .searchBar input {
+  background-color: #1a1a1a;
+  border-color: #444;
+  color: #ffffff;
+}
