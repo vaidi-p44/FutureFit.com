@@ -10,14 +10,27 @@ router.get("/api/employee/:user_id", async (req, res) => {
   try {
     // SQL query to fetch employee data based on user_id
     const sql = `
-        SELECT 
-          e.user_id, e.user_email, e.user_mobile, e.is_verified,
-          er.hiringFor, er.companyName, er.industry, er.employeeCount,
-          er.designation, er.pincode, er.address, er.companyLogo
-        FROM employee e
-        LEFT JOIN EmployeeRegistration er ON e.user_id = er.user_id
-        WHERE e.user_id = ?;
-      `;
+    SELECT 
+      e.user_id, e.user_email, e.user_mobile, e.is_verified,
+      er.hiringFor, er.companyName, er.industry, er.employeeCount,
+      er.designation, er.pincode, er.address, er.companyLogo,
+      j.title
+    FROM employee e
+    LEFT JOIN EmployeeRegistration er ON e.user_id = er.user_id
+    LEFT JOIN jobs j ON e.user_id = j.user_id
+    WHERE e.user_id = ?
+   
+  `;
+
+    // const sql = `
+    //     SELECT
+    //       e.user_id, e.user_email, e.user_mobile, e.is_verified,
+    //       er.hiringFor, er.companyName, er.industry, er.employeeCount,
+    //       er.designation, er.pincode, er.address, er.companyLogo
+    //     FROM employee e
+    //     LEFT JOIN EmployeeRegistration er ON e.user_id = er.user_id
+    //     WHERE e.user_id = ?;
+    //   `;
 
     const result = await query(sql, [user_id]);
     console.log("Query result:", result); // Log query result for debugging

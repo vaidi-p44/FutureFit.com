@@ -16,6 +16,8 @@ const FindTalentPage = () => {
   const [previousRequest, setPreviousRequest] = useState(null); // Stores fetched request
   const [allCandidates, setAllCandidates] = useState([]); // Store all candidates
   const [filteredCandidates, setFilteredCandidates] = useState([]); // Store filtered results
+  const [companyName, setCompanyName] = useState("");
+  const [jobTitle, setJobTitle] = useState("Software Engineer");
 
   const [filters, setFilters] = useState({
     workStatus: "",
@@ -32,7 +34,77 @@ const FindTalentPage = () => {
   useEffect(() => {
     fetchAllRequests();
     fetchPreviousRequest();
+    fetchEmployerDetails();
   }, []);
+
+  const fetchEmployerDetails = async () => {
+    const userId = localStorage.getItem("user_id");
+
+    try {
+      const response = await fetch(
+        `http://localhost:8081/api/employee/${userId}`
+      );
+      const data = await response.json();
+
+      console.log("Employer Data Response:", data); // Log response
+
+      if (data.status === "success" && data.data) {
+        console.log("Company Name:", data.data.companyName); // Log companyName
+        console.log("Job Title:", data.data.title); // Log jobTitle
+
+        setCompanyName(data.data.companyName || "Not Specified");
+        setJobTitle(data.data.title || "Not Specified");
+      } else {
+        toast.error("Employer details not found.");
+      }
+    } catch (error) {
+      console.error("Error fetching employer details:", error);
+      toast.error("Failed to fetch employer details.");
+    }
+  };
+
+  const handleSendJobOffer = async (candidate) => {
+    if (!candidate || !candidate.user_email) {
+      toast.error("Candidate email not found.");
+      return;
+    }
+
+    if (!companyName) {
+      toast.error("Company name is required.");
+      return;
+    }
+
+    if (!jobTitle) {
+      toast.error("Job title is required.");
+      return;
+    }
+
+    const jobDescription = `We are excited to offer you a position as a ${jobTitle} at ${companyName}.`;
+
+    try {
+      const response = await fetch("http://localhost:8081/api/send-job-offer", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          candidateEmail: candidate.user_email,
+          candidateName: candidate.full_name,
+          companyName,
+          jobTitle,
+          jobDescription,
+        }),
+      });
+
+      const data = await response.json();
+      if (data.message === "Job offer email sent successfully!") {
+        toast.success("Job offer sent successfully!");
+      } else {
+        toast.error(data.message || "Failed to send job offer.");
+      }
+    } catch (error) {
+      console.error("Error sending job offer:", error);
+      toast.error("Something went wrong. Try again.");
+    }
+  };
 
   const fetchAllRequests = async () => {
     try {
@@ -175,39 +247,6 @@ const FindTalentPage = () => {
   useEffect(() => {
     applyFilters();
   }, [filters]); // ✅ Filters apply dynamically
-
-  const handleSendJobOffer = async (candidate) => {
-    if (!candidate || !candidate.user_email) {
-      toast.error("Candidate email not found.");
-      return;
-    }
-
-    const jobTitle = "Software Engineer"; // Update this dynamically if needed
-    const jobDescription = `We are excited to offer you a position as a ${jobTitle} at our company.`;
-
-    try {
-      const response = await fetch("http://localhost:8081/api/send-job-offer", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          candidateEmail: candidate.user_email, // ✅ Fetching from candidate details
-          candidateName: candidate.full_name, // ✅ Ensure this field exists
-          jobTitle,
-          jobDescription,
-        }),
-      });
-
-      const data = await response.json();
-      if (data.message === "Job offer email sent successfully!") {
-        toast.success("Job offer sent successfully!");
-      } else {
-        toast.error(data.message || "Failed to send job offer.");
-      }
-    } catch (error) {
-      console.error("Error sending job offer:", error);
-      toast.error("Something went wrong. Try again.");
-    }
-  };
 
   const applyFilters = () => {
     let filtered = allCandidates.filter((candidate) => {
