@@ -177,24 +177,21 @@ const FindTalentPage = () => {
   }, [filters]); // ✅ Filters apply dynamically
 
   const handleSendJobOffer = async (candidate) => {
-    if (!candidate?.user_email) {
+    if (!candidate || !candidate.user_email) {
       toast.error("Candidate email not found.");
       return;
     }
 
-    const employerEmail = localStorage.getItem("user_email"); // Assuming it's stored in localStorage
-    const employerName = localStorage.getItem("user_name"); // Get employer name
-    const jobTitle = "Software Engineer"; // Example job title (modify as needed)
-    const jobDescription = `We are excited to offer you a position as a ${jobTitle} at our company. Looking forward to discussing further.`;
+    const jobTitle = "Software Engineer"; // Update this dynamically if needed
+    const jobDescription = `We are excited to offer you a position as a ${jobTitle} at our company.`;
 
     try {
       const response = await fetch("http://localhost:8081/api/send-job-offer", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          candidateEmail: candidate.user_email,
-          employerEmail,
-          employerName,
+          candidateEmail: candidate.user_email, // ✅ Fetching from candidate details
+          candidateName: candidate.full_name, // ✅ Ensure this field exists
           jobTitle,
           jobDescription,
         }),
@@ -565,7 +562,7 @@ const FindTalentPage = () => {
               <div className={styles.buttonContainer}>
                 <button
                   className={styles.offerButton}
-                  onClick={() => handleSendJobOffer(candidate)}
+                  onClick={() => handleSendJobOffer(selectedCandidate)}
                 >
                   Send Job Offer Request
                 </button>
