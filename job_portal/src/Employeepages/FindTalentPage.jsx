@@ -176,6 +176,42 @@ const FindTalentPage = () => {
     applyFilters();
   }, [filters]); // ✅ Filters apply dynamically
 
+  const handleSendJobOffer = async (candidate) => {
+    if (!candidate?.user_email) {
+      toast.error("Candidate email not found.");
+      return;
+    }
+
+    const employerEmail = localStorage.getItem("user_email"); // Assuming it's stored in localStorage
+    const employerName = localStorage.getItem("user_name"); // Get employer name
+    const jobTitle = "Software Engineer"; // Example job title (modify as needed)
+    const jobDescription = `We are excited to offer you a position as a ${jobTitle} at our company. Looking forward to discussing further.`;
+
+    try {
+      const response = await fetch("http://localhost:8081/api/send-job-offer", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          candidateEmail: candidate.user_email,
+          employerEmail,
+          employerName,
+          jobTitle,
+          jobDescription,
+        }),
+      });
+
+      const data = await response.json();
+      if (data.message === "Job offer email sent successfully!") {
+        toast.success("Job offer sent successfully!");
+      } else {
+        toast.error(data.message || "Failed to send job offer.");
+      }
+    } catch (error) {
+      console.error("Error sending job offer:", error);
+      toast.error("Something went wrong. Try again.");
+    }
+  };
+
   const applyFilters = () => {
     let filtered = allCandidates.filter((candidate) => {
       return (
@@ -527,7 +563,10 @@ const FindTalentPage = () => {
 
               {/* Action Buttons */}
               <div className={styles.buttonContainer}>
-                <button className={styles.offerButton}>
+                <button
+                  className={styles.offerButton}
+                  onClick={() => handleSendJobOffer(candidate)}
+                >
                   Send Job Offer Request
                 </button>
               </div>

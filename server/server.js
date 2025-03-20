@@ -21,6 +21,7 @@ import google from "./routes/google.js";
 import requestroute from "./routes/request.js";
 import payment from "./routes/payment.js";
 import "./routes/cronJobs.js";
+import jobOfferRoutes from "./routes/jobOfferRoutes.js";
 
 const app = express();
 app.use(express.json());
@@ -62,6 +63,7 @@ app.use("/api", google);
 app.use("/api", feedbackRoutes);
 app.use("/api", requestroute);
 app.use("/api", payment);
+app.use("/api", jobOfferRoutes);
 // app.use("/api/auth", authRoutes);
 
 app.get("/", (req, res) => {
